@@ -23,12 +23,17 @@
         text-align: center;
       }
 
+      /* ===== MENU ===== */
+
       nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
         margin-bottom: 30px;
+        position: relative;
       }
 
       nav a {
-        margin: 0 15px;
         text-decoration: none;
         font-weight: bold;
         color: #444;
@@ -36,6 +41,43 @@
 
       nav a:hover {
         color: #2575fc;
+      }
+
+      .dropdown {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .dropdown span {
+        font-weight: bold;
+        color: #444;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 25px;
+        left: 0;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        min-width: 160px;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 8px;
+        color: #333;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background: #f0f0f0;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
       }
 
       h1 {
@@ -63,24 +105,34 @@
   <body>
     <div class="container">
 
+      <!-- ===== MENU PRINCIPAL ===== -->
       <nav>
-        <a href="#presentacion">Presentación</a>
-        <a href="#video">Video</a>
-        <a href="#imagen">Imagen</a>
+        <a href={`${import.meta.env.BASE_URL}`}>Inicio</a>
+        <a href={`${import.meta.env.BASE_URL}presentacion`}>Presentación</a>
+
+        <div class="dropdown">
+          <span>Evidencias ▾</span>
+          <div class="dropdown-content">
+            <a href={`${import.meta.env.BASE_URL}evidencias/modelado`}>Modelado</a>
+            <a href={`${import.meta.env.BASE_URL}evidencias/normalizacion`}>Normalización</a>
+            <a href={`${import.meta.env.BASE_URL}evidencias/sql`}>SQL</a>
+            <a href={`${import.meta.env.BASE_URL}evidencias/proyecto`}>Proyecto</a>
+          </div>
+        </div>
       </nav>
 
-      <h1>E-Portafolio</h1>
-      <h1>Bases de Datos I</h1>
+      <!-- ===== CONTENIDO PRINCIPAL ===== -->
 
-      <!-- PRESENTACIÓN -->
-      <section id="presentacion">
+      <h1>E-Portafolio</h1>
+      <h2>Bases de Datos I</h2>
+
+      <section>
         <h2>👩‍🎓 Presentación</h2>
         <p>Hola, soy <strong>Erika Yuliana Gómez Rodríguez</strong>.</p>
         <p>Estudiante de Ingeniería de Sistemas.</p>
       </section>
 
-      <!-- VIDEO -->
-      <section id="video">
+      <section>
         <h2>🎥 Video de presentación</h2>
 
         <iframe 
@@ -91,8 +143,7 @@
         </iframe>
       </section>
 
-      <!-- IMAGEN -->
-      <section id="imagen">
+      <section>
         <h2>📷 Imagen</h2>
         <img src="yo.jpeg" alt="Foto personal" width="200" />
       </section>

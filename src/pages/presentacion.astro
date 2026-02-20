@@ -1,0 +1,93 @@
+---
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Presentación</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #3f3f3f, #381414);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 60px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        text-align: center;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-weight: bold;
+        color: #444;
+      }
+
+      nav a:hover {
+        color: #2575fc;
+      }
+
+      iframe {
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      img {
+        margin-top: 20px;
+        border-radius: 50%;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-size: 14px;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- MENU -->
+      <nav>
+        <a href={`${import.meta.env.BASE_URL}`}>Inicio</a>
+        <a href={`${import.meta.env.BASE_URL}presentacion`}>Presentación</a>
+      </nav>
+
+      <h1>👩‍🎓 Presentación</h1>
+
+      <p>Hola, soy <strong>Erika Yuliana Gómez Rodríguez</strong>.</p>
+      <p>Estudiante de Ingeniería de Sistemas.</p>
+
+      <h2>🎥 Video de presentación</h2>
+
+      <iframe 
+        src="https://drive.google.com/file/d/131DW-tWjTf32gkw5wuZQS-HCF6JLhN2f/preview"
+        width="100%"
+        height="400"
+        allow="autoplay">
+      </iframe>
+
+      <h2>📷 Imagen</h2>
+      <img src={`${import.meta.env.BASE_URL}yo.jpeg`} width="200" />
+
+      <footer>
+        © 2026 · E-Portafolio Académico
+      </footer>
+
+    </div>
+  </body>
+</html>

@@ -1,49 +1,106 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>E-Portafolio</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 60px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        text-align: center;
+      }
+
+      nav {
+        margin-bottom: 30px;
+      }
+
+      nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+        color: #444;
+      }
+
+      nav a:hover {
+        color: #2575fc;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      iframe {
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+
+      img {
+        margin-top: 20px;
+        border-radius: 50%;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-size: 14px;
+        color: gray;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <nav>
+        <a href="#presentacion">Presentación</a>
+        <a href="#video">Video</a>
+        <a href="#imagen">Imagen</a>
+      </nav>
+
+      <h1>E-Portafolio</h1>
+      <p>Bases de Datos I</p>
+
+      <!-- PRESENTACIÓN -->
+      <section id="presentacion">
+        <h2>👩‍🎓 Presentación</h2>
+        <p>Hola, soy <strong>Erika Yuliana Gómez Rodríguez</strong>.</p>
+        <p>Estudiante de Ingeniería de Sistemas.</p>
+      </section>
+
+      <!-- VIDEO -->
+      <section id="video">
+        <h2>🎥 Video de presentación</h2>
+
+        <iframe 
+          src="https://drive.google.com/file/d/131DW-tWjTf32gkw5wuZQS-HCF6JLhN2f/preview"
+          width="100%"
+          height="400"
+          allow="autoplay">
+        </iframe>
+      </section>
+
+      <!-- IMAGEN -->
+      <section id="imagen">
+        <h2>📷 Imagen</h2>
+        <img src="/yo.jpeg" alt="Foto personal" width="200" />
+      </section>
+
+      <footer>
+        © 2026 · E-Portafolio Académico
+      </footer>
+
+    </div>
+  </body>
 </html>
